@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Condition Notifier</title>
+    
+</head>
+<body>
+
+<div class="container">
+    <h2>Weather Condition Notifier</h2>
+    <input type="number" id="temperatureInput" placeholder="Enter temperature">
+    <button onclick="checkWeather()">Check Condition</button>
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    function checkWeather() {
+        // User se temperature input lena
+        let temperature = document.getElementById("temperatureInput").value;
+
+        // Temperature ko number mein convert karna
+        temperature = Number(temperature);
+
+        // Result display karne ke liye element
+        let result = document.getElementById("result");
+
+        // Conditions ke mutabiq output
+        if (temperature < 0) {
+            result.innerHTML = "Yes, it's very cold outside.";
+        } else if (temperature < 16) {
+            result.innerHTML = "Yes, it's still cold outside.";
+        } else if (temperature < 25) {
+            result.innerHTML = "The weather is normal.";
+        } else if (temperature < 30) {
+            result.innerHTML = "It's still normal.";
+        } else if (temperature < 40) {
+            result.innerHTML = "It's too hot.";
+        } else {
+            result.innerHTML = "Not everything is good, it's extremely hot!";
+        }
+    }
+</script>
+
+</body>
+</html>
